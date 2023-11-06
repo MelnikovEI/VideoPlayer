@@ -4,6 +4,16 @@
   <title>Пример подключения плеера</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.css">
+  <style type="text/css">
+    .button-play-pause {
+      border-style: none;
+      cursor: pointer;
+      color: white;
+      background-color: transparent;
+      width: 20px;
+      margin: auto";
+      }
+  </style>
 </head>
 <body>
   <div id="player" style="width: 800px; height: 600px;">
@@ -12,10 +22,10 @@
 
     <div style="background-color:black;" >
       <div>
-        <button class="js-play-button" style="border-style: none; cursor: pointer; color: white; background-color: transparent; width: 20px; margin: auto">
+        <button class="js-play-button button-play-pause" >
           <i class="fa fa-play" aria-hidden="true"></i>
         </button>
-        <button class="js-pause-button" hidden style="border-style: none; cursor: pointer; color: white; background-color: transparent; width: 20px; margin: auto">
+        <button class="js-pause-button button-play-pause" hidden>
           <i class="fa fa-pause" aria-hidden="true"></i>
         </button>
         <button class="js-volume-button">Volume</button>
