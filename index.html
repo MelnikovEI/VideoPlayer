@@ -1,46 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
 <head>
   <title>Пример подключения плеера</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.css">
   <style type="text/css">
-    .button-play-pause {
+    .player.shadow {
+      display: flex;
+      flex-direction: column;
+      width: 800px;
+      height: 100%;
+      background: #c0c0c0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      padding: 5px;
+    }
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .buttons-block {
+      background-color:black;
+      display: flex;
+      flex-direction: column;
+    }
+    .player-buttons {
       border-style: none;
       cursor: pointer;
       color: white;
       background-color: transparent;
-      width: 20px;
-      margin: auto";
-    }
-    .player.shadow {
-      background: #c0c0c0;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      padding: 5px;
-      width: 800px;
-      height: 600px;
-    }
-    .video-container {
-      width: 100%;
-      height: 100%;
+      margin: auto;
+      float: left;
+      width: 30px;
     }
   </style>
 </head>
-<body>
+<body style="height: 100%;">
   <div id="player" class="player shadow">
-
     <div class="js-video-container video-container"></div>
-
-    <div style="background-color:black;" >
+    <div class="buttons-block" >
       <div>
-        <button class="js-play-button button-play-pause" >
+        <button class="js-play-button player-buttons" >
           <i class="fa fa-play" aria-hidden="true"></i>
         </button>
-        <button class="js-pause-button button-play-pause" hidden>
+        <button class="js-pause-button player-buttons" hidden>
           <i class="fa fa-pause" aria-hidden="true"></i>
         </button>
-        <button class="js-volume-button">Volume</button>
-        <button class="js-mute-button" hidden>Mute</button>
+
         <button class="js-fullscreen-button">Fullscreen</button>
       </div>
     </div>
