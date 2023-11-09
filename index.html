@@ -23,8 +23,6 @@
       background-color:black;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-content: center;
     }
     .player-buttons {
       font-size: large;
@@ -32,7 +30,7 @@
       cursor: pointer;
       color: white;
       background-color: transparent;
-      margin: 1%;
+      margin: 1% auto;
       float: left;
       height: 25px;
       width: 30px;
@@ -47,14 +45,20 @@
       position: relative;
       top: 25%;
     }
+    .progress {
+      background-color: grey;
+    }
+    .progress-slider {
+      background-color: red;
+    }
   </style>
 </head>
 <body style="height: 100%;">
   <div id="player" class="player shadow">
     <div class="js-video-container video-container"></div>
     <div class="buttons-block" >
-      <div class="js-progress" style="background-color: grey;">
-        <div class="js-progress-slider" style="background-color: red;">&nbsp</div>
+      <div class="js-progress progress">
+        <div class="js-progress-slider progress-slider">&nbsp</div>
       </div>
       <div>
         <button class="js-play-button player-buttons" >
