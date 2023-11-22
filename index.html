@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height: 100%;">
+<html>
 <head>
   <title>Видео плеер</title>
   <meta charset="utf-8">
@@ -14,83 +14,73 @@
   <meta name="theme-color" content="#ffffff">
 
   <style type="text/css">
-    .player.shadow {
+    .vp-player {
       display: flex;
       flex-direction: column;
       width: 800px;
-      height: 95%;
+      height: 600px;
       background: #c0c0c0;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
       padding: 5px;
     }
-    .video-container {
+    .vp-display {
       display: flex;
-      flex-direction: column;
       flex-grow: 1;
     }
-    .buttons-block {
-      background-color:black;
+    .vp-controls {
       display: flex;
-      flex-direction: column;
+      background-color:black;
+      height: 50px;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row;
     }
-    .player-buttons {
+    .vp-btn {
       font-size: large;
       border-style: none;
       cursor: pointer;
       color: white;
       background-color: transparent;
-      margin: 1% auto;
-      float: left;
-      height: 25px;
-      width: 30px;
+      height: 35px;
+      width: 35px;
     }
-    .player-buttons.right {
-      float: right;
-    }
-    .player-time {
+    .vp-progress-bar {
+      display: flex;
+      flex-grow: 1;
       border-style: none;
       color: white;
       background-color: transparent;
-      position: relative;
-      top: 25%;
+      padding: 15px;
     }
-    .progress {
-      background-color: grey;
-    }
-    .progress-slider {
-      background-color: red;
+    .vp-progress-time {
+      margin: 3px;
     }
   </style>
 </head>
-<body style="height: 100%;">
-  <div id="player" class="player shadow">
-    <div class="js-video-container video-container"></div>
-    <div class="buttons-block" >
-      <div class="js-progress progress">
-        <div class="js-progress-slider progress-slider">&nbsp</div>
+<body>
+  <div id="player" class="vp-player">
+    <div class="js-video-container vp-display"></div>
+    <div class="vp-controls" >
+      <button class="js-play-button vp-btn" >
+        <i class="fa fa-play" aria-hidden="true"></i>
+      </button>
+      <button class="js-pause-button vp-btn" hidden>
+        <i class="fa fa-pause" aria-hidden="true"></i>
+      </button>
+      <button class="js-volume-button vp-btn">
+        <i class="fa fa-volume-off" aria-hidden="true"></i>
+      </button>
+      <button class="js-mute-button vp-btn" hidden>
+        <i class="fa fa-volume-up" aria-hidden="true"></i>
+      </button>
+      <div class="vp-progress-bar">
+        <span class="js-current-time vp-progress-time"></span>
+        <span class="vp-progress-time"> — </span>
+        <span class="js-duration vp-progress-time"></span>
       </div>
-      <div>
-        <button class="js-play-button player-buttons" >
-          <i class="fa fa-play" aria-hidden="true"></i>
-        </button>
-        <button class="js-pause-button player-buttons" hidden>
-          <i class="fa fa-pause" aria-hidden="true"></i>
-        </button>
-        <button class="js-volume-button player-buttons">
-          <i class="fa fa-volume-off" aria-hidden="true"></i>
-        </button>
-        <button class="js-mute-button player-buttons" hidden>
-          <i class="fa fa-volume-up" aria-hidden="true"></i>
-        </button>
-        <button class="js-fullscreen-button player-buttons right">
-          <i class="fa-solid fa-expand"></i>
-        </button>
-
-        <span class="player-time">&nbsp&nbsp&nbsp</span>
-        <span class="js-current-time player-time"></span>
-        <span class="player-time"> — </span>
-        <span class="js-duration player-time"></span>
-      </div>
+      <button class="js-fullscreen-button vp-btn">
+        <i class="fa-solid fa-expand"></i>
+      </button>
     </div>
   </div>
 
